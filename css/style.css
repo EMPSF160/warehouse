@@ -87,6 +87,11 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-secondary);
   -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-height);
+}
+
+.top-bar {
+  display: none !important;
 }
 
 img, svg, video, picture, canvas {
@@ -333,11 +338,13 @@ h4 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); text-align: center; margin-left: a
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background-color: rgba(11, 13, 17, 0.95);
-  backdrop-filter: blur(12px);
+  background-color: rgba(11, 13, 17, 0.96);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
   height: var(--header-height);
   display: flex;
@@ -350,6 +357,41 @@ h4 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); text-align: center; margin-left: a
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+/* Social Links & Icons */
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+
+.social-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.social-icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-icon-btn:hover {
+  background-color: var(--cat-yellow);
+  color: var(--text-dark);
+  border-color: var(--cat-yellow);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Brand Logo */
