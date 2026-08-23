@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC820"/>
+      <stop offset="100%" stop-color="#E59E00"/>
+    </linearGradient>
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E232A"/>
+      <stop offset="100%" stop-color="#0F1216"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Base Background -->
+  <rect width="64" height="64" rx="14" fill="url(#darkBg)"/>
+  
+  <!-- Industrial Accent Border -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#FFB800" stroke-opacity="0.35" stroke-width="2"/>
+  
+  <!-- Warehouse High-Bay Racks / Structural Graphic -->
+  <!-- Top Roof Gable -->
+  <polygon points="32,10 52,22 12,22" fill="url(#yellowGrad)"/>
+  
+  <!-- Stylized Geometric Industrial "W" -->
+  <path d="M14 26 H20 L26 44 L32 29 H32 L38 44 L44 26 H50 L42 51 H34 L32 43.5 L30 51 H22 Z" fill="url(#yellowGrad)"/>
+  
+  <!-- Safety Hazard Strip at Base -->
+  <rect x="16" y="54" width="32" height="3" rx="1.5" fill="#FFB800" fill-opacity="0.8"/>
+</svg>
