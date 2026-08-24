@@ -230,10 +230,10 @@
   </section>
 
   <!-- Innovation & Fleet Automation Showcase -->
-  <section class="section section-dark">
+  <section class="section section-dark tech-showcase-section">
     <div class="container">
-      <div class="grid-2" style="align-items: center;">
-        <div>
+      <div class="grid-2 tech-showcase-grid" style="align-items: center;">
+        <div class="tech-showcase-content">
           <div class="section-tag">Next-Gen Technology</div>
           <h2>Automated Guided Fleets &amp; AI Telematics</h2>
           <p class="lead-text">
@@ -266,7 +266,7 @@
             </div>
           </div>
 
-          <div style="margin-top: 2.5rem;">
+          <div class="tech-showcase-btn-wrap" style="margin-top: 2.5rem;">
             <a href="facilities.html" class="btn btn-primary">Tour Our Technology Stack</a>
           </div>
         </div>
@@ -363,14 +363,14 @@
   </section>
 
   <!-- CTA Banner -->
-  <section class="section section-slate" style="background: linear-gradient(90deg, #181B22 0%, #111317 100%);">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
-      <div>
+  <section class="section section-slate home-cta-section" style="background: linear-gradient(90deg, #181B22 0%, #111317 100%);">
+    <div class="container home-cta-container">
+      <div class="home-cta-content">
         <div class="section-tag" style="margin-bottom: 0.5rem;">Immediate Occupancy Available</div>
         <h2>Need Dedicated Bay Space or 3PL Capacity?</h2>
-        <p style="color: var(--text-muted); max-width: 600px;">Our network has prime dock doors and high-bay racking ready for contract staging.</p>
+        <p class="home-cta-desc">Our network has prime dock doors and high-bay racking ready for contract staging.</p>
       </div>
-      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+      <div class="home-cta-actions">
         <a href="contact.html" class="btn btn-primary">Get Instant Rate Estimate</a>
         <a href="about.html" class="btn btn-outline">Why WAREHOUSE?</a>
       </div>
@@ -438,14 +438,14 @@
           <span style="color: var(--text-secondary); font-size: 0.92rem;">Operational HQ: 100 Industrial Parkway, Peoria, IL</span>
           <span style="color: var(--text-secondary); font-size: 0.92rem;">Dispatch: +1 (800) 555-9273</span>
           <span style="color: var(--text-secondary); font-size: 0.92rem;">Operations: logistics@warehouse-global.com</span>
-          <a href="contact.html" style="color: var(--cat-yellow); font-weight: 700; margin-top: 8px;">Launch Quote Calculator →</a>
+          <a href="contact.html" class="footer-link-calc">Launch Quote Calculator →</a>
         </div>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <div>&copy; 2026 WAREHOUSE Industrial Logistics Inc. All rights reserved.</div>
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <a href="about.html">Privacy Policy</a>
         <a href="about.html">Terms of Carriage</a>
         <a href="about.html">Safety Manual</a>
@@ -453,6 +453,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Scroll to Top Action Button (Visible across all sections) -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Scroll to top of page" title="Back to Top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>

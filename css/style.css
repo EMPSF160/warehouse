@@ -590,6 +590,8 @@ h4 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); text-align: center; margin-left: a
   height: 80px;
   background: linear-gradient(135deg, transparent 50%, var(--cat-yellow) 50%);
   opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .status-badge {
@@ -604,6 +606,11 @@ h4 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); text-align: center; margin-left: a
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+  max-width: calc(100% - 60px);
+  white-space: normal;
+  word-break: break-word;
 }
 
 .status-dot {
@@ -1451,10 +1458,30 @@ input[type="range"] {
   color: var(--text-secondary);
   font-size: 0.92rem;
   text-align: center;
+  transition: var(--transition);
+  display: inline-block;
 }
 
 .footer-links a:hover {
   color: var(--cat-yellow);
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(255, 205, 17, 0.4);
+}
+
+.footer-link-calc {
+  color: var(--cat-yellow) !important;
+  font-weight: 700;
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.footer-link-calc:hover {
+  color: #FFFFFF !important;
+  transform: translateX(4px);
+  text-shadow: 0 0 10px rgba(255, 205, 17, 0.6);
 }
 
 .footer-cert-badges {
@@ -1488,6 +1515,105 @@ input[type="range"] {
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
+}
+
+.footer-bottom a {
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+  color: var(--cat-yellow);
+  text-decoration: underline;
+}
+
+/* CTA Banner Desktop */
+.home-cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.home-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.home-cta-content .section-tag {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.home-cta-content h2 {
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+}
+
+.home-cta-desc {
+  color: var(--text-muted);
+  max-width: 600px;
+  text-align: left;
+  margin: 0;
+}
+
+.home-cta-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Floating Scroll to Top Action Button (Visible across all sections)
+   ========================================================================== */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--cat-yellow);
+  border-radius: var(--radius-sm);
+  color: var(--cat-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 205, 17, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.scroll-to-top-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+  background-color: var(--cat-yellow);
+  color: var(--text-dark);
+  box-shadow: 0 8px 25px rgba(255, 205, 17, 0.5);
+  transform: translateY(-3px);
+}
+
+.scroll-to-top-btn:hover svg {
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -1614,6 +1740,135 @@ input[type="range"] {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  /* Next-Gen Technology Section Tab View Alignment */
+  .tech-showcase-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tech-showcase-content .section-tag {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .tech-showcase-content h2,
+  .tech-showcase-content .lead-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tech-showcase-btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tech-showcase-btn-wrap .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Before Footer CTA Banner Tab View Alignment */
+  .home-cta-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .home-cta-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-cta-content .section-tag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-cta-content h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-cta-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-cta-actions {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Grid-3 3rd Card Center Alignment on 1024px Tablet (2-Column Grid) */
+  .grid-3 > :nth-child(3):last-child,
+  .grid-3 > .industrial-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: calc(50% - (clamp(1.25rem, 2.5vw, 2rem) / 2));
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Company Page - Four Decades of Innovation Tab View Alignment */
+  .about-innovation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-innovation-content .section-tag {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .about-innovation-content h2,
+  .about-innovation-content .lead-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-innovation-content .feature-media-frame {
+    width: 100%;
+  }
+
+  .about-innovation-btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-innovation-btn-wrap .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1646,6 +1901,13 @@ input[type="range"] {
 
   .grid-4, .grid-3, .grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .grid-3 > :nth-child(3):last-child,
+  .grid-3 > .industrial-card:nth-child(3):last-child {
+    grid-column: auto;
+    max-width: 100%;
+    width: 100%;
   }
 
   .hero-stats-row {
@@ -1703,6 +1965,29 @@ input[type="range"] {
   .safety-banner div:first-child div:first-child {
     font-size: 3rem !important;
   }
+
+  .hero-card-display::after {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-card-display .status-badge {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    max-width: calc(100% - 40px);
+  }
+
+  .scroll-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .scroll-to-top-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1740,6 +2025,17 @@ input[type="range"] {
 
   .hero-card-display {
     padding: 1.5rem 1.25rem;
+  }
+
+  .hero-card-display::after {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-card-display .status-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    max-width: calc(100% - 35px);
   }
 
   .calc-price-big {
